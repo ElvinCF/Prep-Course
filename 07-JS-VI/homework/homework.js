@@ -27,7 +27,11 @@ function sumarArray(numeros, cb) {
   // Pasa el resultado a `cb`
   // No es necesario devolver nada
   // Primera opcion
-
+  cb = numeros[0];
+  for (i = 1; numeros.length; i++)
+  {
+    cb = cb + numeros[i];
+  }
   /*
   var suma = numeros.reduce( function (acc, elemento){
     return acc + elemento;
@@ -43,15 +47,20 @@ function forEach(array, cb) {
   //Tu código:
   for(var i = 0; array.length ; i++ )
   {
-    cb= cb + array[i];
+    cb[i] = array[i];
   };
 }
-
+ 
 function map(array, cb) {
   // Crea un nuevo array
   // Itera sobre cada valor en "array", pásalo a `cb` y luego ubicar el valor devuelto por `cb` en un nuevo array
   // El nuevo array debe tener la misma longitud que el array del argumento
   //Tu código:
+  for(var i = 0; array.length ; i++ )
+  {
+    cb[i]+ array[i];
+  };
+  nuevo = cb;
 }
 
 function filter(array) {
